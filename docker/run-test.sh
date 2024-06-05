@@ -50,6 +50,10 @@ docker run ${docker_volumes} \
         ${docker_environment} \
         ${docker_workdir} \
         $@ \
+        -e http_proxy="http://172.17.0.1:3128" \
+        -e HTTP_PROXY="http://172.17.0.1:3128" \
+        -e http_proxy="http://172.17.0.1:3128" \
+        -e HTTPS_PROXY="http://172.17.0.1:3128" \
         cuaesd/aesd-autotest${dockertag} \
         ${docker_user} \
         ./full-test.sh
